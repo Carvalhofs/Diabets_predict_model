@@ -41,8 +41,26 @@ if enviar:
     ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
     booleano = prediction (ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
+    modal.open()
 
-    if booleano [0] == 0:
-        st.write ('Parabéns, você tem poucas chances de possuir diabetes (Apenas {:.2f}%). Continue cuidando da sua saúde.'.format(100*booleano[1][0] [1]))
-    else:
-        st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
+    if modal.is_open():
+        with modal.container():
+            st.write("Text goes here")
+
+            html_string = '''
+            <h1>HTML string in RED</h1>
+
+            <script language="javascript">
+            document.querySelector("h1").style.color = "red";
+            </script>
+            '''
+            components.html(html_string)
+
+            st.write("Some fancy text")
+            value = st.checkbox("Check me")
+            st.write(f"Checkbox checked: {value}")
+
+        if booleano [0] == 0:
+            st.write ('Parabéns, você tem poucas chances de possuir diabetes (Apenas {:.2f}%). Continue cuidando da sua saúde.'.format(100*booleano[1][0] [1]))
+        else:
+            st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
