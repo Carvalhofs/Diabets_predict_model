@@ -37,7 +37,11 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
        'BMI':[ind_mass_corp], 'DiabetesPedigreeFunction':[fat_pred_diab], 'Age':[idade]}))
     return [prediction, proba]
 if enviar:
-    modal.open()
+    if altura*peso*glicose*pressao_sangue*espessura_pele*insulina*idade == 0:
+        st.warning("Todos os campos devem ser preenchidos")
+
+    else:
+        modal.open()
 
 if modal.is_open():
     with modal.container():
