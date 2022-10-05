@@ -5,7 +5,6 @@ import pickle
 import streamlit_modal as modal
 import streamlit.components.v1 as components
 
-st.title("Diabets prediction")
 st.write("""#### Preencha as informações abaixo e clique no botão 'Enviar' para ter o seu diagnóstico.""")
 
 pickle_in = open('ensemble_model.pkl', 'rb')
