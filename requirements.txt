@@ -1,0 +1,10 @@
+pandas
+numpy
+sklearn
+matplotlib
+seaborn
+pickle5
+xgboost
+lightgbm
+streamlit-modal
+streamlit-on-Hover-tabs
