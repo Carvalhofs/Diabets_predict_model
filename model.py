@@ -46,7 +46,9 @@ if modal.is_open():
         booleano = prediction (ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
 
         if booleano [0] == 0:
-            st.write ('Parabéns, você tem poucas chances de possuir diabetes (Apenas {:.2f}%). Continue cuidando da sua saúde.'.format(100*booleano[1][0] [1]))
+            st.write ('#### Parabéns, você tem poucas chances de possuir diabetes (Apenas {:.2f}%). Continue cuidando da sua saúde.'.format(100*booleano[1][0] [1]))
         else:
-            st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
+            st.write ('#### Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
+
+            
         st.markdown('<a href="https://carvalhofs-diabets-predict-principal-l1e0kt.streamlitapp.com/Contatos_Especialistas" target="_self"><button type="button">Retornar para Contatos de Especialistas</button></a>', unsafe_allow_html=True)
